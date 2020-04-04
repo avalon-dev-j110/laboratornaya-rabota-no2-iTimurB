@@ -1,24 +1,28 @@
 package ru.avalon.java.dev.j10.labs.shapes;
 
-/**
- * Представление о треугольнике.
- * <p>
- * Треуго́льник (в евклидовом пространстве) — геометрическая
- * фигура, образованная тремя отрезками, которые соединяют
- * три точки, не лежащие на одной прямой. Указанные три
- * точки называются вершинами треугольника, а отрезки —
- * сторонами треугольника. Часть плоскости, ограниченная
- * сторонами, называется внутренностью треугольника: нередко
- * треугольник рассматривается вместе со своей внутренностью
- * (например, для определения понятия площади).
- *
- * @see <a href="https://ru.wikipedia.org/wiki/%D0%A2%D1%80%D0%B5%D1%83%D0%B3%D0%BE%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA">Треугольник</a>
- */
-public class Triangle {
-
-    /*
-     * TODO: Реализовать класс 'Triangle'
-     * 1. Используйте наследование.
-     * 2. Реализуйте все абстрактные методы.
-     */
+public class Triangle implements Polygon{
+    public float sideA;
+    public float sideB;
+    public float sideC;
+    private float halfPerimeter;
+       
+    public Triangle (float sideA, float sideB, float sideC){
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;         
+    }
+    
+    @Override
+    public float getPerimeter() {
+        return (float) Math.abs(sideA + sideB + sideC);
+    }    
+    @Override
+    public float getArea() {
+        halfPerimeter = (this.getPerimeter()/2); 
+        return (float) Math.sqrt (this.halfPerimeter*(this.halfPerimeter-this.sideA)*(this.halfPerimeter-this.sideB)*(this.halfPerimeter-this.sideC));
+    }    
+    @Override
+    public String toString() {
+        return "Triangle {" + "sideA = " + sideA + "; sideB = " + sideB + "; sideC = " + sideC + '}' + " Area of a triangle = " + getArea();
+    }    
 }
