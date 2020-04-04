@@ -17,8 +17,7 @@ public class Application {
         shapes [9] = new Circle (17); 
         
          for (int i=1 ; i<=10; i++)
-            System.out.println("Площадь фигуры " + i + " = "  + shapes[i-1].getArea());
-         
+            System.out.println("Площадь фигуры " + i + " = "  + shapes[i-1].getArea());         
         Shape MaxArea = findMaxArea(shapes);
         System.out.println(MaxArea.toString());
     }    

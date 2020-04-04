@@ -1,5 +1,4 @@
 package ru.avalon.java.dev.j10.labs.shapes;
-
 /**
  * Абстрактное представление о многоугольнике.
  * <p>
