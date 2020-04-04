@@ -1,5 +1,4 @@
 package ru.avalon.java.dev.j10.labs.shapes;
-
 /**
  * Абстрактное представление об эллипсе.
  * <p>
